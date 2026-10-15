@@ -78,6 +78,20 @@ class Dll{
 
 
     }
+    void insert(int idx,int val){
+        ListNode temp=head;
+        while(idx> 0){
+            temp=temp.next;
+            idx--;
+        }
+        ListNode a=new ListNode(val);
+        a.next=temp.next;
+        a.prev=temp;
+        temp.next=a;
+        a.next.prev=a;
+        size++;
+
+    }
 
 }
 class DoublyLinkedList{
@@ -86,6 +100,9 @@ class DoublyLinkedList{
         list.addAtFirst(10);
         list.addAtFirst(20);
         list.addAtLast(30);
+        list.addAtLast(50);
+        list.addAtLast(60);
+        list.addAtLast(70);
         list.display();
         list.deleteFirst();
 
@@ -93,5 +110,11 @@ class DoublyLinkedList{
         list.deleteLast();
 
         list.display();
+        list.insert(1,40);
+        list.display();
+        list.insert(1,20);
+        list.display();
+
+
     }
 }
